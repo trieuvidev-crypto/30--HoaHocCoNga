@@ -1,0 +1,108 @@
+/**
+ * DESIGN TOKENS — single source of truth for every visual value.
+ * Never hardcode a color/spacing/radius value anywhere else in the
+ * codebase; reference these variables instead (per DESIGN_TOKEN_SYSTEM.md
+ * and MASTER_CLAUDE_RULES.md "Never hardcode colors").
+ *
+ * Values sourced from DESIGN_SYSTEM_2026.md.
+ */
+
+:root {
+    /* COLOR — light theme (default) */
+    --color-background: #F5F8FC;
+    --color-surface: #FFFFFF;
+    --color-primary: #2563EB;
+    --color-primary-hover: #1D4ED8;
+    --color-secondary: #06B6D4;
+    --color-accent: #22C55E;
+    --color-warning: #F59E0B;
+    --color-danger: #EF4444;
+    --color-success: #10B981;
+    --color-info: #3B82F6;
+
+    --color-text-primary: #0F172A;
+    --color-text-secondary: #475569;
+    --color-text-muted: #94A3B8;
+    --color-border: #E2E8F0;
+
+    /* TYPOGRAPHY */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --text-display-xl: 4rem;
+    --text-display: 3.5rem;
+    --text-heading-xl: 3rem;
+    --text-heading: 2.5rem;
+    --text-title: 2rem;
+    --text-subtitle: 1.5rem;
+    --text-body-lg: 1.125rem;
+    --text-body: 1rem;
+    --text-small: 0.875rem;
+    --text-caption: 0.75rem;
+
+    /* SPACING — 8-point system */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-16: 64px;
+    --space-20: 80px;
+    --space-24: 96px;
+
+    /* RADIUS */
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-card: 28px;
+    --radius-button: 18px;
+    --radius-round: 9999px;
+
+    /* SHADOW */
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12);
+    --shadow-floating: 0 20px 48px rgba(15, 23, 42, 0.16);
+
+    /* MOTION */
+    --duration-fast: 150ms;
+    --duration-normal: 250ms;
+    --duration-complex: 400ms;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Z-INDEX */
+    --z-dropdown: 100;
+    --z-modal: 200;
+    --z-toast: 300;
+    --z-tooltip: 400;
+}
+
+/* DARK THEME — activated via [data-theme="dark"] on <html>, toggled by
+   assets/js/modules/theme.js. Never reload the page to switch themes. */
+[data-theme='dark'] {
+    --color-background: #0B1220;
+    --color-surface: #111827;
+    --color-text-primary: #F1F5F9;
+    --color-text-secondary: #CBD5E1;
+    --color-text-muted: #64748B;
+    --color-border: #1F2937;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+    --shadow-floating: 0 20px 48px rgba(0, 0, 0, 0.6);
+}
+
+/* Respect OS-level reduced-motion preference platform-wide. */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
